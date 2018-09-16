@@ -6,7 +6,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 // Novo
-//var nodeExternals = require('webpack-node-externals');
+var nodeExternals = require('webpack-node-externals');
 
 module.exports = {
 
@@ -26,8 +26,18 @@ module.exports = {
 //        libraryTarget : 'this' //Novo
         //publicPath : __dirname+'/dist/'
     },
+//    target: 'node',
 
-//    target: 'node', // Novo
+//    node: {
+//        console: false,
+//        fs: 'empty',
+//        net: 'empty',
+//        tls: 'empty'
+//    },
+
+//    externals: [nodeExternals()],
+
+//    externals: ['tls', 'net', 'fs'],    
 
     devServer: {
         contentBase: "./dist",
